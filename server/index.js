@@ -15,6 +15,22 @@ app.get('/api/time', (req, res) => {
   res.json({ now: Date.now() });
 });
 
+let messages = [];
+
+app.post('/api/message', (req, res) => {
+  const message = {
+    id: Date.now(),
+    data: req.body,
+    timestamp: new Date().toISOString()
+  };
+  messages.push(message);
+  res.json({ success: true, message });
+});
+
+app.get('/api/messages', (req, res) => {
+  res.json({ messages });
+});
+
 app.listen(PORT, () => {
   console.log(`Server listening on http://localhost:${PORT}`);
 });
