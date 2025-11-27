@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile
     container_name: csci3104-server
     ports:
-      - "9001:3001"
+      - "20001:3001"
     environment:
       - NODE_ENV=production
       - PORT=3001
@@ -25,7 +25,7 @@ services:
       dockerfile: Dockerfile
     container_name: csci3104-client
     ports:
-      - "9080:80"
+      - "20080:80"
     depends_on:
       - server
     networks:
