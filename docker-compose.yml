@@ -3,7 +3,7 @@ services:
     build:
       context: ./server
       dockerfile: Dockerfile
-    container_name: harwood-server
+    container_name: csci3104-server
     ports:
       - "9001:3001"
     environment:
@@ -23,7 +23,7 @@ services:
     build:
       context: ./client
       dockerfile: Dockerfile
-    container_name: harwood-client
+    container_name: csci3104-client
     ports:
       - "9080:80"
     depends_on:
